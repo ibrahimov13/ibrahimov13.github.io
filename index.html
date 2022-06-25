@@ -4,38 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Notes App</title>
+    <!-- Font Awesome Link For Icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 <body>
-    <div class="container">
-        <div class="nav-bar">
-            <div class="logo">QR Code Generator</div>
-            <div class="menu">
-                <ul>
-                    <li>
-                        <a href="#">Home</a>
-                        <div class="bottom"></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="main">
-            <div class="header">
-                <h1>QR Code Generator</h1>
-                <p>
-                    Paste a url or enter text to create QR code
-                </p>
-            </div>
-            <div class="form">
-                <input type="text" placeholder="Enter url or text">
-                <button type="button">Create QR Code</button>
-            </div>
-            <div class="qr-code">
-                <img src="img/grey-square.jpg" alt="QR Code" width="150px">
+    <div class="popup-box">
+        <div class="popup">
+            <div class="content">
+                <header>
+                    <p>Add a new Note</p>
+                    <i class="uil uil-times"></i>
+                </header>
+                <form action="#">
+                    <div class="row title">
+                        <label for="#">Title</label>
+                        <input type="text">
+                    </div>
+                    <div class="row description">
+                        <label for="#">Description</label>
+                        <textarea></textarea>
+                    </div>
+                    <button>Add Note</button>
+                </form>
             </div>
         </div>
     </div>
-    <script src="js/script.js" type="text/javascript"></script>
+    <div class="container">
+        <li class="add-box">
+            <div class="icon">
+                <i class="uil uil-plus"></i>
+            </div>
+            <p>Add new note</p>
+        </li>
+    </div>
+
+    <script src="script.js"></script>
+    
 </body>
 </html>
