@@ -48,7 +48,6 @@ function showNotes(){
                         </div>
                     </li>`;
                     addBox.insertAdjacentHTML("afterend", liTag);
-                    console.log(index);
     });
 }
 showNotes();
@@ -127,9 +126,9 @@ addBtn.addEventListener("click", e => {
 
 function firstNote(){
 
-    var one1 = localStorage.getItem("one");
+    var one = localStorage.getItem("one");
 
-    if(one1 != '1'){
+    if(one != '1'){
         let fnoteTitle = '&#128722; Shopping',
         fnoteDesc = '&#128204; Note 1: ... &#128204; Note 2: ... &#128204; Note 3: ... ';
         let snoteTitle = '&#128170; Personal',
@@ -162,9 +161,6 @@ function firstNote(){
         localStorage.setItem("notes", JSON.stringify(notes));
         showNotes();
         localStorage.setItem('one', '1');
-        console.log("else");
-    }else{
     }
 }
 firstNote();
-
