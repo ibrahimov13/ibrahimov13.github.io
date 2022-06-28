@@ -7,6 +7,7 @@ descTag = popupBox.querySelector("textarea"),
 addBtn = popupBox.querySelector("button");
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 // getting localstorage notes if exist and parsing them
 // to js object else passing an empty array to notes
 const notes = JSON.parse(localStorage.getItem("notes") || "[]");
@@ -24,13 +25,14 @@ closeIcon.addEventListener("click", () => {
     addBtn.innerText = "Add Note";
     popupTitle.innerText = "Add a new Note";
     popupBox.classList.remove("show");
+    document.getElementById('note1').classList.remove('popupRead');
 });
 
 function showNotes(){
     document.querySelectorAll(".note").forEach(note => note.remove());
     notes.forEach((note, index) => {
         let liTag = `<li class="note">
-                        <div class="details">
+                        <div onclick = "readNote(${index}, '${note.title}', '${note.description}')" class="details">
                             <p>${note.title}</p>
                             <span>${note.description}</span>
                         </div>
@@ -46,6 +48,7 @@ function showNotes(){
                         </div>
                     </li>`;
                     addBox.insertAdjacentHTML("afterend", liTag);
+                    console.log(index);
     });
 }
 showNotes();
@@ -80,6 +83,18 @@ function updateNote(noteId, title, desc){
     console.log(noteId, title, desc);
 }
 
+function readNote(noteId, title, desc){
+    isUpdate = true;
+    updateId = noteId;
+    addBox.click();
+    titleTag.value = title;
+    descTag.value = desc;
+    addBtn.innerText = "Save";
+    popupTitle.innerText = "Read a Note";
+    console.log(noteId, title, desc);
+    document.getElementById('note1').classList.add('popupRead');
+}
+
 addBtn.addEventListener("click", e => {
     e.preventDefault();
     let noteTitle = titleTag.value, 
@@ -96,6 +111,7 @@ addBtn.addEventListener("click", e => {
             title: noteTitle, description: noteDesc,
             date: `${month} ${day}, ${year}`
         }
+        
         if(!isUpdate){
             notes.push(noteInfo); // adding new note to notes
         }else{
@@ -107,5 +123,47 @@ addBtn.addEventListener("click", e => {
         closeIcon.click();
         showNotes();
     }
-    
 });
+
+function firstNote(){
+
+    var one1 = localStorage.getItem("one");
+
+    if(one1 != '1'){
+        let fnoteTitle = '&#128722; Shopping',
+        fnoteDesc = '&#128204; Note 1: ... &#128204; Note 2: ... &#128204; Note 3: ... ';
+        let snoteTitle = '&#128170; Personal',
+        snoteDesc = '&#128204; Note 1: ... &#128204; Note 2: ... &#128204; Note 3: ... ';
+        let tnoteTitle = '&#128188; Work',
+        tnoteDesc = '&#128204; Note 1: ... &#128204; Note 2: ... &#128204; Note 3: ... ';
+
+        let dateObj = new Date();
+            month = months[dateObj.getMonth()],
+            day = dateObj.getDate(),
+            year = dateObj.getFullYear();
+
+        let noteInfo = {
+            title: fnoteTitle, description: fnoteDesc,
+            date: `${month} ${day}, ${year}`
+        }
+
+        let noteInfo1 = {
+            title: snoteTitle, description: snoteDesc,
+            date: `${month} ${day}, ${year}`
+        }
+
+        let noteInfo3 = {
+            title: tnoteTitle, description: tnoteDesc,
+            date: `${month} ${day}, ${year}`
+        }
+
+        notes.push(noteInfo, noteInfo1, noteInfo3);
+
+        localStorage.setItem("notes", JSON.stringify(notes));
+        showNotes();
+        localStorage.setItem('one', '1');
+        console.log("else");
+    }else{
+    }
+}
+firstNote();
