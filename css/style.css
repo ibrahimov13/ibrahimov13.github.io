@@ -1,460 +1,65 @@
-/* Import Google Font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+body, .container, .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 body{
-    background: #FA7F08;
-    padding-bottom: 5rem;
-}
-html{
-    font-size: 10px;
-}
-.logo{
-    width: 100%;
-    height: 5rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 6rem 6rem 1rem;
-}
-.logo h1, .logo i{
-    font-size: 3.6rem;
-    color: #fff;
-}
-.logo i{
-    margin-right: 1rem;
+    min-height: 100vh;
+    background: #4a98f7;
 }
 .container{
-    margin: 5rem;
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fill, 265px);
-    justify-content: center;
-}
-.container li{
-    height: 25rem;
-    list-style: none;
+    width: 440px;
     background: #fff;
-    border-radius: 0.5rem;
-    padding: 1.5rem 2rem 2rem;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 30px 30px 38px;
 }
-.add-box, .icon, .bottom-content, .settings .menu li, .popup, header{
-    display: flex;
-    align-items: center;
+.container img{
+    max-width: 103px;
+}
+.container h1{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0;
+}
+.container .content{
+    width: 100%;
     justify-content: space-between;
 }
-.add-box{
-    flex-direction: column;
-    justify-content: center;
-    cursor: pointer;
-}
-.add-box:hover{
-    background: #f5f5f5;
-}
-.add-box .icon{
-    height: 7.8rem;
-    width: 7.8rem;
-    color: #FA7F08;
-    font-size: 4rem;
-    border-radius: 50%;
-    justify-content: center;
-    border: 0.2rem dashed #FA7F08;
-}
-.add-box p{
-    color: #FA7F08;
-    font-weight: 500;
-    margin-top: 2rem;
-    font-size: 2rem;
-}
-.container .note{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.note .details{
-    max-height: 16.5rem;
-    overflow-y: auto;
-}
-.note .details:hover{
-    cursor: pointer;
-}
-.note .details::-webkit-scrollbar {
-    width: 0.3rem;
-}
-.note .details::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px #999;
-    border-radius: 0.3rem;
-}
-.note .details::-webkit-scrollbar-thumb {
-    background: #FA7F08;
-    border-radius: 0.3rem;
-}
-.note .details::-webkit-scrollbar-button {
-    display: block;
-    height: 0.6rem;
-}
-.note p{
-    font-size: 2.2rem;
-    font-weight: 500;
-    overflow-x: hidden;
-    /*max-height: 3rem;
-    overflow-y: hidden;*/
-}
-.note span{
-    display: block;
-    margin-top: 0.5rem;
-    color: #575757;
-    font-size: 1.6rem;
-    overflow-x: hidden;
-}
-.note .bottom-content{
-    padding-top: 1rem;
-    border-top: 0.1rem solid #ccc;
-}
-.bottom-content span{
-    color: #6d6d6d;
-    font-size: 1.4rem;
-}
-.bottom-content .settings i{
-    color: #6d6d6d;
-    font-size: 1.4rem;
-    cursor: pointer;
-}
-.settings{
-    position: relative;
-}
-.settings .menu{
-    position: absolute;
-    bottom: 0rem;
-    right: -0.5rem;
-    padding: 0.5rem 0;
-    background: #fff;
-    border-radius: 0.4rem;
-    transform: scale(0);
-    transform-origin: bottom right;
-    box-shadow: 0rem 0rem 0.6rem rgba(0,0,0,0.15);
-    transition: transform 0.2s ease;
-}
-.settings.show .menu{
-    transform: scale(1);
-}
-.settings .menu li{
-    height: 2.5rem;
-    font-size: 1.6rem;
-    cursor: pointer;
-    border-radius: 0rem;
-    padding: 1.7rem 1.5rem;
-    justify-content: flex-start;
-}
-.menu li:hover{
-    background: #f5f5f5;
-}
-.menu li i{
-    padding-right: 0.8rem;
-}
-.popup-box, .popupRead{
-    position: fixed;
-    top: 0rem;
-    left: 0rem;
-    height: 100%;
-    width: 100%;
-    z-index: 2;
-    background: rgba(0,0,0,0.4);
-}
-.popupRead{
-    background: rgba(0,0,0,0.9);
-}
-.popup-box .popup, .popupRead .popup{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 3;
-    max-width: 40rem;
-    width: 100%;
-    justify-content: center;
-    transform: translate(-50%, -50%);
-}
-.popupRead .popup{
-    max-width: 80rem;
-    height: 100%;
-}
-.popup-box, .popup-box .popup, .popupRead, .popupRead .popup{
-    opacity: 0;
+.container .content.disable{
+    opacity: 0.6;
     pointer-events: none;
-    transition: all 0.25s ease;
 }
-.popup-box.show, .popup-box.show .popup, .popupRead.show, .popupRead.show .popup{
-    opacity: 1;
-    pointer-events: auto;
+.content .column{
+    border-radius: 5px;
+    padding: 0 10px;
+    border: 1px solid #999;
+    width: calc(100% / 3 - 5px);
 }
-.popup-box .popup .content{
-    width: calc(100% - 15px);
-    background: #fff;
-    border-radius: 0.5rem;
+.column select{
+    outline: none;
+    border: none;
+    height: 53px;
+    width: 100%;
+    font-size: 19px;
 }
-.popupRead .popup .content{
-    width: calc(100%);
-    height: 100%;
-    background: #fff;
-    border-radius: 0.5rem;
-}
-.popup .content header{
-    padding: 1.5rem 2.5rem;
-    border-bottom: 0.1rem solid #ccc;
-}
-.content header p{
-    font-size: 2rem;
-    font-weight: 500;
-}
-.content header i{
-    color: #8b8989;
+.container button{
+    width: 100%;
+    outline: none;
+    border: none;
     cursor: pointer;
-    font-size: 2.3rem;
-}
-.content form{
-    margin: 1.5rem 2.5rem 3.5rem;
-}
-.content form .row{
-    margin-bottom: 2rem;
-}
-.popup-box .row label, .popupRead form .row label{
-    display: block;
-    font-size: 1.8rem;
-    margin-bottom: 0.6rem;
-}
-.popupRead form .row label{
-    display: none;
-}
-.popup-box .content form :where(input, textarea), .popupRead .content form :where(input, textarea){
-    width: 100%;
-    height: 5rem;
-    outline: none;
-    font-size: 1.7rem;
-    padding: 0 1.5rem;
-    border-radius: 4px;
-    border: 0.1rem solid #999;
-}
-.popupRead .content form :where(input, textarea){
-    height: 5rem;
-    outline: none;
-    border: none;
-}
-.popupRead .content form input{
-    font-weight: 500;
-}
-.popup-box .content form textarea, .popupRead .content form textarea{
-    height: 15rem;
-    resize: none;
-}
-.popupRead .content form textarea{
-    height: 50vh;
-}
-.content form textarea::-webkit-scrollbar {
-    width: 0.6rem;
-}
-.content form textarea::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px #999;
-    border-radius: 0.3rem;
-}
-.content form textarea::-webkit-scrollbar-thumb {
-    background: #FA7F08;
-    border-radius: 0.3rem;
-}
-.content form textarea::-webkit-scrollbar-button {
-    display: block;
-    height: 0.06rem;
-}
-.popup-box .content form button, .popupRead .content form button{
-    width: 100%;
-    height: 5rem;
-    border: none;
-    outline: none;
     color: #fff;
-    cursor: pointer;
-    font-size: 1.7rem;
-    border-radius: 0.4rem;
-    background: #FA7F08;
-    transition: opacity 0.35s ease;
-}
-.popup-box .content form button:hover, .popupRead .content form button:hover{
-    opacity: 0.9;
-}
-.popupRead .content form button{
-    position: fixed;
-    bottom: 3rem;
-    right: 2rem;
-    width: auto;
-    padding: 0 2rem;
-}
-
-@media only screen and (max-width: 768px){
-.container{
-    margin: 4rem;
-    gap: 1.2rem;
-    grid-template-columns: repeat(auto-fill, 245px);
-}
-.container li{
-    height: 23rem;
-    padding: 1.5rem 2rem 2rem;
-}
-.add-box .icon{
-    height: 6.8rem;
-    width: 6.8rem;
-    font-size: 3.2rem;
-}
-.add-box p{
-    font-weight: 500;
-    margin-top: 2rem;
-    font-size: 1.9rem;
-}
-.note .details{
-    max-height: 14.5rem;
-    overflow-y: auto;
-}
-.note p{
-    font-size: 2.1rem;
-    font-weight: 500;
-}
-.note span{
-    display: block;
-    margin-top: 0.5rem;
-    font-size: 1.5rem;
-}
-.note .bottom-content{
-    padding-top: 1rem;
-}
-.bottom-content span{
-    font-size: 1.3rem;
-}
-.bottom-content .settings i{
-    font-size: 1.3rem;
-}
-.settings .menu li{
-    font-size: 1.5rem;
-}
-.menu li i{
-    padding-right: 0.7rem;
-}
-.content header p{
-    font-size: 1.9rem;
-}
-.content header i{
-    font-size: 2.2rem;
-}
-form .row label{
-    font-size: 1.7rem;
-}
-.content form :where(input, textarea){
-    height: 4.5rem;
-}
-.content form textarea{
-    height: 14rem;
-}
-}
-
-@media only screen and (max-width: 576px){
-    .logo{
-        padding: 3rem 3rem 0rem;
-    }
-    .logo h1, .logo i{
-        font-size: 2.8rem;
-    }
-    .logo i{
-        margin-right: 0.8rem;
-    }
-.container{
-    margin: 3rem;
-    grid-template-columns: repeat(auto-fill, 100%);
-}
-.container li{
-    height: 15rem;
-}
-.container .add-box{
-    align-items: center;
-    position: fixed;
-    bottom: 3rem;
-    right: 2rem;
-    height: 6rem;
-    width: 6rem;
-    padding: 2rem;
-    cursor: pointer;
-    border-radius: 50%;
-    box-shadow: 0rem 0rem 0.6rem rgba(0,0,0,0.15);
-    z-index: 1;
-}
-.add-box .icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    font-size: 3.6rem;
-    border: none;
-}
-.add-box p{
-    display: none;
-}
-.container .note{
-    width: 100%;
-}
-.note .details{
-    max-height: 7rem;
-    overflow-y: hidden;
-}
-.note p{
-    font-size: 1.8rem;
-    max-height: 3rem;
-    overflow: hidden;
-}
-.note span{
-    margin-top: 0.3rem;
-    font-size: 1.4rem;
-}
-.bottom-content span{
-    font-size: 1.2rem;
-}
-.bottom-content .settings i{
-    font-size: 1.2rem;
-}
-.settings .menu li{
-    font-size: 1.4rem;
-    padding: 1.4rem 1.2rem;
-}
-.content header p{
-    font-size: 1.8rem;
-}
-.content header i{
-    font-size: 2.1rem;
-}
-.content form{
-    margin: 1.5rem 2.5rem 3.5rem;
-}
-form .row label{
-    font-size: 1.6rem;
-}
-.popup-box .content form :where(input, textarea), .popupRead .content form :where(input, textarea){
-    height: 3.5rem;
-    font-size: 1.5rem;
-    padding: 0 1.5rem;
-    border-radius: 4px;
-    border: 0.1rem solid #999;
-}
-.popupRead .content form :where(input, textarea){
-    border: none;
-}
-.popup-box .content form textarea, .popupRead .content form textarea{
-    height: 15rem;
-    resize: none;
-}
-.popupRead .content form textarea{
-    height: 60vh;
-}
-.content form button{
-    height: 4.5rem;
-    font-size: 1.6rem;
-}
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 17px 0;
+    border-radius: 5px;
+    background: #4a98f7;
 }
