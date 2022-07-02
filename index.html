@@ -4,48 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Simple Alarm Clock</title>
     <link rel="stylesheet" href="css/style.css">
-    <title>Notes App</title>
-    <!-- Iconscout Link For Icons -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 <body>
-
-    <div class="logo">
-        <i class="demo-icon uil-notes"></i>
-        <h1>Notes App</h1>
-    </div>
-    <div class="popup-box" id="note1">
-        <div class="popup">
-            <div class="content">
-                <header>
-                    <p>Add a new Note</p>
-                    <i class="uil uil-times"></i>
-                </header>
-                <form action="#">
-                    <div class="row title">
-                        <label for="#">Title</label>
-                        <input type="text">
-                    </div>
-                    <div class="row description">
-                        <label for="#">Description</label>
-                        <textarea></textarea>
-                    </div>
-                    <button>Add Note</button>
-                </form>
+    <div class="container">
+        <img src="files/icons8-clock.svg" alt="">
+        <h1>00:00:00 PM</h1>
+        <div class="content">
+            <div class="column">
+                <select>
+                    <option value="Hour" selected hidden>Hour</option>
+                </select>
+            </div>
+            <div class="column">
+                <select>
+                    <option value="Minute" selected hidden>Minute</option>
+                </select>
+            </div>
+            <div class="column">
+                <select>
+                    <option value="AM/PM" selected hidden>AM/PM</option>
+                </select>
             </div>
         </div>
+        <button>Set Alarm</button>
     </div>
-    <div class="container">
-        <li class="add-box">
-            <div class="icon">
-                <i class="uil uil-plus"></i>
-            </div>
-            <p>Add new note</p>
-        </li>
-    </div>
-
-    <script src="js/script.js" type="text/javascript"></script>
     
+    <script src="js/script.js" type="text/javascript"></script>
 </body>
 </html>
