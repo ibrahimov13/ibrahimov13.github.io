@@ -6,6 +6,9 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+html{
+    font-size: 10px;
+}
 body, .container, .content{
     display: flex;
     align-items: center;
@@ -16,19 +19,19 @@ body{
     background: #49D907;
 }
 .container{
-    width: 440px;
+    width: 44rem;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 1rem;
     flex-direction: column;
-    padding: 30px 30px 38px;
+    padding: 3rem 3rem 3.8rem;
 }
 .container img{
-    max-width: 103px;
+    max-width: 10.3rem;
 }
 .container h1{
-    font-size: 38px;
+    font-size: 3.8rem;
     font-weight: 500;
-    margin: 30px 0;
+    margin: 3rem 0;
 }
 .container .content{
     width: 100%;
@@ -39,24 +42,24 @@ body{
     pointer-events: none;
 }
 .content .column{
-    border-radius: 5px;
-    padding: 0 10px;
-    border: 1px solid #999;
-    width: calc(100% / 3 - 5px);
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+    border: 0.1rem solid #999;
+    width: calc(100% / 3 - 0.5rem);
 }
 .column select{
     outline: none;
     border: none;
-    height: 53px;
+    height: 5.3rem;
     width: 100%;
-    font-size: 19px;
+    font-size: 1.9rem;
     cursor: pointer;
 }
 .column select::-webkit-scrollbar{
     width: 0.6rem;
 }
 .column select::-webkit-scrollbar-track{
-    box-shadow: inset 0 0 5px #999;
+    box-shadow: inset 0 0 0.5rem #999;
     border-radius: 0.6rem;
 }
 .column select::-webkit-scrollbar-thumb{
@@ -73,10 +76,10 @@ body{
     border: none;
     cursor: pointer;
     color: #fff;
-    margin-top: 20px;
-    font-size: 20px;
-    padding: 17px 0;
-    border-radius: 5px;
+    margin-top: 2rem;
+    font-size: 2rem;
+    padding: 1.7rem 0;
+    border-radius: 0.5rwm;
     background: rgb(73, 217, 7);
 }
 .container button:hover{
@@ -84,29 +87,30 @@ body{
 }
 @media only screen and (max-width: 576px){
     .container{
-        width: 80%;
-        border-radius: 8px;
-        padding: 25px 25px 33px;
+        width: 90%;
+        border-radius: 0.8rem;
+        padding: 2rem 2rem 2.8rem;
     }
     .container img{
-        max-width: 83px;
+        max-width: 8.3rem;
     }
     .container h1{
-        font-size: 32px;
-        margin: 25px 0;
+        font-size: 3.2rem;
+        margin: 2.5rem 0;
     }
     .content .column{
-        padding: 0 8px;
+        padding: 0 0.6rem;
     }
     .column select{
-        height: 48px;
-        font-size: 17px;
+        height: 4.8rem;
+        font-size: 1.6rem;
+        background-color: #fff;
     }
     .column select::-webkit-scrollbar{
         width: 0.3rem;
     }
     .column select::-webkit-scrollbar-track{
-        box-shadow: inset 0 0 3px #999;
+        box-shadow: inset 0 0 0.3rem #999;
         border-radius: 0.3rem;
     }
     .column select::-webkit-scrollbar-thumb{
@@ -116,7 +120,7 @@ body{
         height: 0.3rem;
     }
     .container button{
-        font-size: 18px;
-        padding: 13px 0;
+        font-size: 1.7rem;
+        padding: 1.3rem 0;
     }
 }
