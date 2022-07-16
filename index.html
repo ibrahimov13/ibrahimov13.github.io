@@ -4,81 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translator</title>
+    <meta name="title" content="Language Translator">
+    <meta name="description" content="Language Translator | Use free translation services">
 
-    <!-- Primary Meta Tags -->
-    <title>Photo Editor</title>
-    <meta name="title" content="Photo Editor">
-    <meta name="description" content="Online Photo Editor | Edit photo quick and easy">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome CDN Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ibrahimov13.github.io/">
-    <meta property="og:title" content="Photo Editor">
-    <meta property="og:description" content="Online Photo Editor | Edit photo quick and easy">
-    <meta property="og:image" content="https://files-iboshop.netlify.app/photo%20editor%20app/files/img/Photo%20editor%20app.png">
+    <meta property="og:title" content="Language Translator">
+    <meta property="og:description" content="Language Translator | Use free translation services">
+    <meta property="og:image" content="">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="ibrahimov13.github.io">
     <meta property="twitter:url" content="https://ibrahimov13.github.io/">
-    <meta property="twitter:title" content="Photo Editor">
-    <meta property="twitter:description" content="Online Photo Editor | Edit photo quick and easy">
-    <meta property="twitter:image" content="https://files-iboshop.netlify.app/photo%20editor%20app/files/img/Photo%20editor%20app.png">
+    <meta property="twitter:title" content="Language Translator">
+    <meta property="twitter:description" content="Language Translator | Use free translation services">
+    <meta property="twitter:image" content="">
 
-    <!-- CSS stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    
-    <!-- BoxIcon & FontAwesome Links For Icons -->
-    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 </head>
 <body>
-    <div class="container disable">
-        <h2>Easy Photo Editor</h2>
+    <div class="container">
         <div class="wrapper">
-            <div class="editor-panel">
-                <div class="filter">
-                    <label for="" class="title">Filters</label>
-                    <div class="options">
-                        <button id="brightness" class="active">Brightness</button>
-                        <button id="saturation">Saturation</button>
-                        <button id="inversion">Inversion</button>
-                        <button id="grayscale">Grayscale</button>
-                    </div>
-                    <div class="slider">
-                        <div class="filter-info">
-                            <p class="name">Brightness</p>
-                            <p class="value">100%</p>
-                        </div>
-                        <input type="range" value="100" min="0" max="200">
-                    </div>
-                </div>
-                <div class="rotate">
-                    <label for="" class="title">Rotate & Flip</label>
-                    <div class="options">
-                        <button id="left"><i class="fa-solid fa-rotate-left"></i></button>
-                        <button id="right"><i class="fa-solid fa-rotate-right"></i></button>
-                        <button id="horizontal"><i class="bx bx-reflect-vertical"></i></button>
-                        <button id="vertical"><i class="bx bx-reflect-horizontal"></i></button>
-                    </div>
-                </div>
+            <div class="text-input">
+                <textarea class="from-text" placeholder="Enter text"></textarea>
+                <textarea class="to-text" placeholder="Translation" readonly disabled></textarea>
             </div>
-            <div class="preview-img">
-                <img src="img/image-placeholder.svg" alt="preview-img">
-            </div>
+            <ul class="controls">
+                <li class="row from">
+                    <div class="icons">
+                        <i id="from" class="fas fa-volume-up"></i>
+                        <i id="from" class="fas fa-copy"></i>
+                    </div>
+                    <select>
+                    </select>
+                </li>
+                <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
+                <li class="row to">
+                    <select>
+                    </select>
+                    <div class="icons">
+                        <i id="to" class="fas fa-volume-up"></i>
+                        <i id="to" class="fas fa-copy"></i>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div class="controls">
-            <button class="reset-filter">Reset Filters</button>
-            <div class="row">
-                <input type="file" class="file-input" accept="image/*" hidden>
-                <button class="choose-img">Choose Image</button>
-                <button class="save-img">Save Image</button>
-            </div>
-        </div>
+        <button>Translate Text</button>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="js/countries.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+
 </body>
 </html>
