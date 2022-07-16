@@ -13,7 +13,7 @@ selectTag.forEach((tag, id) => {
         let selected;
         if(id == 0 && country_code == "en-GB"){
             selected = "selected";
-        }else if(id == 1 && country_code == "hi-IN"){
+        }else if(id == 1 && country_code == "az-AZ"){
             selected = "selected";
         }
         let option = `<option value="${country_code}" ${selected}>${countries[country_code]}</option>`;
