@@ -1,6 +1,7 @@
 const countries = {
     "am-ET": "Amharic",
     "ar-SA": "Arabic",
+    "az-AZ": "Azerbaijani",
     "be-BY": "Bielarus",
     "bem-ZM": "Bemba",
     "bi-VU": "Bislama",
